@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}<title> Projects </title> {% endblock title %}
+
+{% load static %}
+{% block Projectsbody %}
+
+
+
+<div class="card text-center">
+  <h2>My Projects </h2>
+  {% for post in posts %}
+  <div class="card-header">
+    {{post.projectName}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text" style="color:blue;" >{{post.projectDescription}}</p>
+    <a href="{% url 'pdetail' id=post.pk %}" class="btn btn-primary">Go To Project Details</a>
+  </div>
+  <div class="card-footer text-muted">
+    {{post.projectTimestamp}}
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock Projectsbody %}

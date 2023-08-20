@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}<title> Blog </title> {% endblock title %}
+
+{% load static %}
+
+{% block blogbody %}
+
+
+    <!-- ======= Blog Grid ======= -->
+    
+    <div id="journal-blog" class="text-left  paddsections">
+
+        <div class="container">
+          <div class="section-title text-center">
+            <h2>Welcome to my blog page</h2>
+          </div>
+        </div>
+  
+        <div class="container">
+          <div class="journal-block">
+            <div class="row">
+  {% for post in posts %}
+              <div class="col-lg-4 col-md-6">
+                <div class="journal-info mb-30">
+  
+                  <a href="{% url 'detail' id=post.pk %}"><img src="{{post.img.url}}" class="img-responsive" alt="img"></a>
+  
+                  <div class="journal-txt">
+  
+                    <h4><a href="{% url 'detail' id=post.pk %}">{{post.title}}</a></h4>
+                    <h5>{{post.description}}</h6>
+                    <h6>Posted by: <b>{{post.authname}}</b></h5>
+                    <h6>Posted on: <b>{{post.timeStamp}}</b></h6>
+
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+    </div>
+  
+              
+      <!-- End Blog Grid -->
+
+
+
+{% endblock blogbody %}

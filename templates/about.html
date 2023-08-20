@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}<title> About Us </title> {% endblock title %}
+{% load static %}
+
+{% block about %}
+
+
+
+  <!-- ======= About Section ======= -->
+  <div id="about" class="paddsection" style="background-color: gray;">
+    <div class="container">
+      <div class="row justify-content-between">
+
+        <div class="col-lg-4 ">
+          <div class="div-img-bg">
+            <div class="about-img">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-7">
+          <h2>About Us</h2>
+          <hr>
+          <div class="about-descr">
+            <p class="text-justify">Hello, I am Gopal Bhunia from west medinipur but currently, i live in Coochbehar.I have completed of diploma in computer science and technology from K.G Enginerring Institute,bishnupur,bankura.Now i am studing Bachelor of Technology from Coochbehar Government Engineering College in Computer science & Engineering.</p>
+
+            <h6 style="text-align: center;">-----Thank You------</h6>
+            
+            <br>
+            <h3>Skill Knowledge</h3>
+            <hr>
+            {% for skill in skills %}
+            <ul class="list-group">
+              <li class="list-group-item border-0" style="background-color: gray;"><b style="color: white;">{{skill.skillName}}</b></li>
+            </ul>
+            {% endfor %}
+
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div><!-- End About Section -->
+
+  {% endblock about %}
