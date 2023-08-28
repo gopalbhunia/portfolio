@@ -1,1 +1,1 @@
-web: gunicorn Tech2Learn.wsgi 
+web: gunicorn app:app
